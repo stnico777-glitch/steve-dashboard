@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steve + Nico Dashboard</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a33;
+      --panel-2: #17203d;
+      --text: #e8ecf8;
+      --muted: #9aa6c7;
+      --accent: #6ea8fe;
+      --good: #43d17a;
+      --warn: #ffcc66;
+      --bad: #ff6b6b;
+      --border: rgba(255,255,255,0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #0b1020 0%, #0f1730 100%);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 32px; }
+    .sub { color: var(--muted); margin-top: 8px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+    .card {
+      background: rgba(18,26,51,0.88);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      backdrop-filter: blur(6px);
+    }
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+    .span-3 { grid-column: span 3; }
+    .label { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+    .metric { font-size: 30px; font-weight: 700; }
+    .small { color: var(--muted); font-size: 14px; margin-top: 8px; line-height: 1.5; }
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--panel-2);
+      color: var(--accent);
+      border: 1px solid var(--border);
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+    ul {
+      margin: 12px 0 0 0;
+      padding-left: 18px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    .muted { color: var(--muted); }
+    .target {
+      font-size: 44px;
+      font-weight: 800;
+      color: var(--good);
+      line-height: 1;
+      margin-top: 8px;
+    }
+    .section-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .row:last-child { border-bottom: none; }
+    .value { font-weight: 700; }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .bad { color: var(--bad); }
+    @media (max-width: 900px) {
+      .span-8, .span-6, .span-4, .span-3 { grid-column: span 12; }
+      .hero { flex-direction: column; align-items: start; }
+      .target { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Steve + Nico Dashboard 🧭</h1>
+        <p class="sub">Current operating dashboard for revenue, pipeline, priorities, product, and money.</p>
+      </div>
+      <div class="card" style="padding: 14px 18px; min-width: 240px;">
+        <div class="label">North Star</div>
+        <div class="target">$100k/mo</div>
+        <div class="small">Build productized service cash flow, then stack app upside.</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card span-3">
+        <div class="label">Cash on Hand</div>
+        <div class="metric">$4,000</div>
+        <div class="small warn">Tight. Protect liquidity.</div>
+      </div>
+      <div class="card span-3">
+        <div class="label">Personal Monthly Expenses</div>
+        <div class="metric">$3,000</div>
+        <div class="small">Keep spending controlled.</div>
+      </div>
+      <div class="card span-3">
+        <div class="label">Debt</div>
+        <div class="metric">$18,000</div>
+        <div class="small bad">$10k credit card + $8k car</div>
+      </div>
+      <div class="card span-3">
+        <div class="label">Income This Month</div>
+        <div class="metric">$6,000</div>
+        <div class="small">$3k app income + $3k job/refund</div>
+      </div>
+
+      <div class="card span-8">
+        <h2 class="section-title">Business Model</h2>
+        <div class="pill">Engine 1: Service Cash Flow</div>
+        <div class="pill">Engine 2: Premium Projects</div>
+        <div class="pill">Engine 3: Man of God</div>
+        <ul>
+          <li><strong>Core Offer:</strong> Website + CRM + automations + LSA setup for service businesses</li>
+          <li><strong>Base pricing:</strong> $2k–$3k setup + $500–$750/month</li>
+          <li><strong>Premium offer:</strong> Custom app / client portal / internal tool</li>
+          <li><strong>Premium pricing:</strong> $5k tightly-scoped MVP, $8k–$12k standard, $15k+ larger build</li>
+          <li><strong>Owned product bet:</strong> Man of God</li>
+        </ul>
+      </div>
+
+      <div class="card span-4">
+        <h2 class="section-title">Target Niches</h2>
+        <ul>
+          <li>Roofers</li>
+          <li>HVAC</li>
+          <li>Movers</li>
+          <li>Flooring</li>
+          <li>Siding</li>
+        </ul>
+        <div class="small">These are lead-driven local businesses where credibility, speed-to-lead, and follow-up directly affect revenue.</div>
+      </div>
+
+      <div class="card span-6">
+        <h2 class="section-title">Pipeline</h2>
+        <div class="row"><span>Awake and Align</span><span class="value good">$9,500</span></div>
+        <div class="row"><span>Website prospect</span><span class="value warn">$2,000 likely</span></div>
+        <div class="row"><span>Past website reference</span><span class="value">$500</span></div>
+        <div class="small">Word of mouth exists, but outbound needs to become the real engine.</div>
+      </div>
+
+      <div class="card span-6">
+        <h2 class="section-title">Weekly Targets</h2>
+        <div class="row"><span>Outbound/day</span><span class="value">50–100</span></div>
+        <div class="row"><span>New conversations/week</span><span class="value">25+</span></div>
+        <div class="row"><span>Booked calls/week</span><span class="value">5+</span></div>
+        <div class="row"><span>Closed deals/week</span><span class="value">1–2</span></div>
+      </div>
+
+      <div class="card span-6">
+        <h2 class="section-title">This Week</h2>
+        <ul>
+          <li>Finalize core service offer wording</li>
+          <li>Write cold call script</li>
+          <li>Start / resume outbound</li>
+          <li>Define Man of God launch scope</li>
+          <li>Set money rules and spending guardrails</li>
+        </ul>
+      </div>
+
+      <div class="card span-6">
+        <h2 class="section-title">Money Rules</h2>
+        <ul>
+          <li>No unnecessary spending</li>
+          <li>Preserve cash</li>
+          <li>Cover minimum debt payments</li>
+          <li>Do not treat one-off money as recurring income</li>
+          <li>Trading is not the main plan</li>
+        </ul>
+      </div>
+
+      <div class="card span-12">
+        <h2 class="section-title">Communication System</h2>
+        <ul>
+          <li><strong>Main chat:</strong> strategy, decisions, priorities</li>
+          <li><strong>This dashboard:</strong> source of truth for revenue, pipeline, priorities, and money</li>
+          <li><strong>Optional later:</strong> separate sales / build / finance workstreams if volume gets high</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
